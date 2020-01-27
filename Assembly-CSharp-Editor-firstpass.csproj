@@ -76,6 +76,7 @@
     <Compile Include="Assets\Plugins\BrokenVector\PersistentComponents\Editor\Utils\AssetPrefs.cs" />
     <Compile Include="Assets\Plugins\BrokenVector\PersistentComponents\Editor\Utils\Base64.cs" />
     <Compile Include="Assets\Plugins\BrokenVector\PersistentComponents\Editor\Utils\SearchUtils.cs" />
+    <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -693,6 +694,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{64DA5804-34FD-B939-FD1B-7627B625032B}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="InspectorGadgets.csproj">
       <Project>{AED472E8-4AF4-CE2C-5B83-693BD3D31E00}</Project>
       <Name>InspectorGadgets</Name>

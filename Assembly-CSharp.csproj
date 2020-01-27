@@ -69,6 +69,7 @@
     <Compile Include="Assets\Code\Scripts\Misc\Loader.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\MouseDrag.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\ObjectRotator.cs" />
+    <Compile Include="Assets\Libraries\AnimatorStateMachineUtil\Scripts\AnimatorStateMachineUtil.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
@@ -116,23 +117,34 @@
     <Compile Include="Assets\Libraries\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Framework\LTSeq.cs" />
-    <Compile Include="Assets\Utilities\DDOL.cs" />
-    <Compile Include="Assets\Utilities\GameObjectExtensions.cs" />
-    <Compile Include="Assets\Utilities\InvokeExtention.cs" />
-    <Compile Include="Assets\Utilities\MathHelper.cs" />
-    <Compile Include="Assets\Utilities\Note.cs" />
-    <Compile Include="Assets\Utilities\SceneViewCameraFollower.cs" />
-    <Compile Include="Assets\Utilities\SceneViewIcon.cs" />
-    <Compile Include="Assets\Utilities\Singleton.cs" />
-    <Compile Include="Assets\Utilities\SwipeInput.cs" />
-    <Compile Include="Assets\Utilities\TakeScreenshot.cs" />
-    <Compile Include="Assets\Utilities\UnityHelper.cs" />
-    <Compile Include="Assets\Utilities\VectorExtenstions.cs" />
+    <Compile Include="Assets\UtilityScripts\Camera\Camera2DFollow.cs" />
+    <Compile Include="Assets\UtilityScripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\FollowTarget.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\GameObjectExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\SceneViewIcon.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\SmoothFollow.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\TimedObjectActivator.cs" />
+    <Compile Include="Assets\UtilityScripts\GameObjects\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\UtilityScripts\General\DDOL.cs" />
+    <Compile Include="Assets\UtilityScripts\General\FPSCounter.cs" />
+    <Compile Include="Assets\UtilityScripts\General\InvokeExtention.cs" />
+    <Compile Include="Assets\UtilityScripts\General\MathHelper.cs" />
+    <Compile Include="Assets\UtilityScripts\General\Note.cs" />
+    <Compile Include="Assets\UtilityScripts\General\Singleton.cs" />
+    <Compile Include="Assets\UtilityScripts\General\SwipeInput.cs" />
+    <Compile Include="Assets\UtilityScripts\General\TakeScreenshot.cs" />
+    <Compile Include="Assets\UtilityScripts\General\UnityHelper.cs" />
+    <Compile Include="Assets\UtilityScripts\General\VectorExtenstions.cs" />
+    <Compile Include="Assets\UtilityScripts\Physics\DragRigidbody.cs" />
+    <Compile Include="Assets\UtilityScripts\UI\AlphaButtonClickMask.cs" />
     <None Include="Assets\Libraries\Asset Usage Finder\readme.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTweenPro\readme.txt" />
+    <None Include="Assets\Packs\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\Libraries\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\Libraries\LeanTween\ReadMe.txt" />
     <None Include="Assets\Code\Shaders\ScreenSpaceGradient.shader" />
+    <None Include="Assets\Art\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Code\Shaders\TransFadeShader.shader" />
     <None Include="Assets\Libraries\Demigiant\DemiLib\Core\DemiLib.xml" />
@@ -713,6 +725,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{64DA5804-34FD-B939-FD1B-7627B625032B}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="InspectorGadgets.csproj">
       <Project>{AED472E8-4AF4-CE2C-5B83-693BD3D31E00}</Project>
       <Name>InspectorGadgets</Name>
