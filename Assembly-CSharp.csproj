@@ -119,13 +119,31 @@
     <Compile Include="Assets\Libraries\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\UtilityScripts\Camera\Camera2DFollow.cs" />
     <Compile Include="Assets\UtilityScripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\ColorSpace.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\ColorX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\ComponentExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Dispatcher.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\GUIX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\HSL.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\HSV.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\MathX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Matrix4x4X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Resources.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\StringExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Texture2DX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\TransformX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Vector2X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Vector3X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extensions\Vector4X.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\FollowTarget.cs" />
-    <Compile Include="Assets\UtilityScripts\GameObjects\GameObjectExtensions.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\SceneViewIcon.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\SmoothFollow.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\TimedObjectActivator.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\UtilityScripts\General\AutoReferencer.cs" />
     <Compile Include="Assets\UtilityScripts\General\DDOL.cs" />
     <Compile Include="Assets\UtilityScripts\General\FPSCounter.cs" />
     <Compile Include="Assets\UtilityScripts\General\InvokeExtention.cs" />
@@ -135,7 +153,6 @@
     <Compile Include="Assets\UtilityScripts\General\SwipeInput.cs" />
     <Compile Include="Assets\UtilityScripts\General\TakeScreenshot.cs" />
     <Compile Include="Assets\UtilityScripts\General\UnityHelper.cs" />
-    <Compile Include="Assets\UtilityScripts\General\VectorExtenstions.cs" />
     <Compile Include="Assets\UtilityScripts\Physics\DragRigidbody.cs" />
     <Compile Include="Assets\UtilityScripts\UI\AlphaButtonClickMask.cs" />
     <None Include="Assets\Libraries\Asset Usage Finder\readme.txt" />
@@ -151,31 +168,31 @@
     <None Include="Assets\Libraries\LeanTween\License.txt" />
     <None Include="Assets\Libraries\Demigiant\readme_DOTweenPro.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -349,19 +366,19 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="InspectorGadgets.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

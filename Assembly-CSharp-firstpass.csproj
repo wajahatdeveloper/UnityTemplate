@@ -68,31 +68,31 @@
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -266,19 +266,19 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="InspectorGadgets.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -172,10 +172,10 @@
     <None Include="Assets\Plugins\Animancer\Examples\09 Animator Controllers\02 3D Game Kit\Read Me.txt" />
     <None Include="Assets\Plugins\Animancer\Animancer.asmdef" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -367,28 +367,28 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DemiEditor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenProEditor">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Libraries/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
     <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="InspectorGadgets.Lite">
-      <HintPath>C:/Users/Zainab/Desktop/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
