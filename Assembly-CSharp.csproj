@@ -81,9 +81,8 @@
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\DOTweenProShortcuts.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\DOTweenTextMeshPro.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\DOTweenTk2d.cs" />
-    <Compile Include="Assets\Libraries\FastGizmos\Scripts\FastGizmos.cs" />
-    <Compile Include="Assets\Libraries\FastGizmos\Scripts\FastGizmosExtra.cs" />
-    <Compile Include="Assets\Libraries\FastGizmos\Scripts\FastGizmosHandleText.cs" />
+    <Compile Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\GAui.cs" />
+    <Compile Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\GSui.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -155,17 +154,20 @@
     <Compile Include="Assets\UtilityScripts\General\UnityHelper.cs" />
     <Compile Include="Assets\UtilityScripts\Physics\DragRigidbody.cs" />
     <Compile Include="Assets\UtilityScripts\UI\AlphaButtonClickMask.cs" />
-    <None Include="Assets\Libraries\Asset Usage Finder\readme.txt" />
+    <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\Note.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\Packs\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\Libraries\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+    <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\!How to.txt" />
     <None Include="Assets\Libraries\LeanTween\ReadMe.txt" />
     <None Include="Assets\Code\Shaders\ScreenSpaceGradient.shader" />
+    <None Include="Assets\Docs\Structure.txt" />
     <None Include="Assets\Art\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Code\Shaders\TransFadeShader.shader" />
     <None Include="Assets\Libraries\Demigiant\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\Libraries\LeanTween\License.txt" />
+    <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Readme.txt" />
     <None Include="Assets\Libraries\Demigiant\readme_DOTweenPro.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -374,11 +376,17 @@
     <Reference Include="DOTweenPro">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
-    <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
-    </Reference>
     <Reference Include="InspectorGadgets.Lite">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+    </Reference>
+    <Reference Include="GETween">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/Common/Plugins/GETween.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIAnimator">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/GUIAnimator.dll</HintPath>
+    </Reference>
+    <Reference Include="Animancer.Lite">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -1,0 +1,2 @@
+Plugins - All Assets that stay in the editor
+Libraries - All Assets that are included in build

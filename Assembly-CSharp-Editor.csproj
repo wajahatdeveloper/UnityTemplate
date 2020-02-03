@@ -63,24 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\AssetDependencies.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\CacheManager.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\DependencyBase.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\FileDependency.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\FindDependencies.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\InSceneDependency.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\ResultRow.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\SearchTarget.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Data\SerializableCache.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\DependencyWindow.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\FeedbackPopup.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Styles\ContentStylePair.cs" />
-    <Compile Include="Assets\Libraries\Asset Usage Finder\Editor\Styles\DependencyStyle.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\Editor\DOTweenPreviewManager.cs" />
-    <Compile Include="Assets\Libraries\FastGizmos\Editor\FastGizmosEditor.cs" />
-    <Compile Include="Assets\Libraries\FastGizmos\Editor\FastGizmosHandleTextEditor.cs" />
+    <Compile Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\Editor\GAuiEditor.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\Editor\Note.txt" />
     <None Include="Assets\Libraries\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
@@ -328,11 +315,20 @@
     <Reference Include="DOTweenProEditor">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Animancer/Animancer.Lite.dll</HintPath>
-    </Reference>
     <Reference Include="InspectorGadgets.Lite">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+    </Reference>
+    <Reference Include="GETween">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/Common/Plugins/GETween.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIAnimatorEditor">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/Editor/GUIAnimatorEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIAnimator">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/GUIAnimator.dll</HintPath>
+    </Reference>
+    <Reference Include="Animancer.Lite">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
