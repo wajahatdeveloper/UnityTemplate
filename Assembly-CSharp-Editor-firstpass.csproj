@@ -91,6 +91,34 @@
     <Compile Include="Assets\Plugins\BrokenVector\PersistentComponents\Editor\Utils\SearchUtils.cs" />
     <Compile Include="Assets\Plugins\FastGizmos\Editor\FastGizmosEditor.cs" />
     <Compile Include="Assets\Plugins\FastGizmos\Editor\FastGizmosHandleTextEditor.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\AssetInfo.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\AssetProcessor.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectCurator.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectCuratorData.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectCuratorWindow.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectIcons.cs" />
+    <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectWindowOverlay.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\AlignTools.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\DistributeTools.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\GroupTools.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\PlaceTools.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\RandomTools.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\TransformMenu.cs" />
+    <Compile Include="Assets\Plugins\TransformTools\Editor\TransformWizard.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\ComponentWatcher.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\EditorDrawString.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\EditorHUD.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\MoveComponent.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\Multiselect.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\ObjectHotkey.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\PasteHexColor.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\PastePropertiesExt.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Features\ScriptTemplate.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\FeatureSet.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\LastPropertyData.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\LittleHelperConfig.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\UITextUtility.cs" />
+    <Compile Include="Assets\Plugins\ULH\Editor\Util\SelectionExt.cs" />
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
@@ -320,6 +348,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Animancer.Lite">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
+    </Reference>
     <Reference Include="DemiLib">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
@@ -338,20 +369,17 @@
     <Reference Include="DOTweenProEditor">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
-    <Reference Include="InspectorGadgets.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
-    </Reference>
     <Reference Include="GETween">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/Common/Plugins/GETween.dll</HintPath>
-    </Reference>
-    <Reference Include="GUIAnimatorEditor">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/Editor/GUIAnimatorEditor.dll</HintPath>
     </Reference>
     <Reference Include="GUIAnimator">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/GUIAnimator.dll</HintPath>
     </Reference>
-    <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
+    <Reference Include="GUIAnimatorEditor">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/GUI Animator/GUI Animator for Unity UI/Plugins/Editor/GUIAnimatorEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="InspectorGadgets.Lite">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
