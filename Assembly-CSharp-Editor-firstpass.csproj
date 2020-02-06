@@ -98,27 +98,6 @@
     <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectCuratorWindow.cs" />
     <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectIcons.cs" />
     <Compile Include="Assets\Plugins\ProjectCurator\Editor\ProjectWindowOverlay.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\AlignTools.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\DistributeTools.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\GroupTools.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\PlaceTools.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\RandomTools.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\TransformMenu.cs" />
-    <Compile Include="Assets\Plugins\TransformTools\Editor\TransformWizard.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\ComponentWatcher.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\EditorDrawString.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\EditorHUD.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\MoveComponent.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\Multiselect.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\ObjectHotkey.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\PasteHexColor.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\PastePropertiesExt.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Features\ScriptTemplate.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\FeatureSet.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\LastPropertyData.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\LittleHelperConfig.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\UITextUtility.cs" />
-    <Compile Include="Assets\Plugins\ULH\Editor\Util\SelectionExt.cs" />
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
