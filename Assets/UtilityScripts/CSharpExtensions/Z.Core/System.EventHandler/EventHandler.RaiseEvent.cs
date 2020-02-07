@@ -13,7 +13,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="this">The @this to act on.</param>
     /// <param name="sender">Source of the event.</param>
-    public static void RaiseEvent(this EventHandler @this, object sender)
+    public static void RaiseEvent(this System.EventHandler @this, object sender)
     {
         if (@this != null)
         {
@@ -27,7 +27,7 @@ public static partial class Extensions
     /// <param name="handler">The handler to act on.</param>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    public static void Raise(this EventHandler handler, object sender, EventArgs e)
+    public static void Raise(this System.EventHandler handler, object sender, EventArgs e)
     {
         if (handler != null)
             handler(sender, e);

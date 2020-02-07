@@ -1,5 +1,2 @@
 Plugins - All Assets that stay in the editor
-	ULH (Unity Little Helper)
-	Transform Tools
-	Project Curator
 Libraries - All Assets that are included in build
