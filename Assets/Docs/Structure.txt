@@ -1,2 +1,21 @@
 Plugins - All Assets that stay in the editor
 Libraries - All Assets that are included in build
+
+Events
+	Targeted Events
+	   #TODO Add Targeted Event Groups (UI, Players, Enemies, etc...)
+	Global Events
+States
+	Generic State Machine
+Databases
+	Scriptable Objects
+	Datasets
+	   POCO Objects
+	   Inspector Objects
+Buffers
+	Connection Objects
+		Adapters
+		Forwarders
+	Structural Objects
+	   Interfaces
+	   Abstract Classes
