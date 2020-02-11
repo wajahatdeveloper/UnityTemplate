@@ -178,7 +178,6 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Boolean\Boolean.IfFalse.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Boolean\Boolean.IfTrue.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Boolean\Boolean.ToBinary.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Boolean\Boolean.ToString.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Byte\Byte.SqlSystemTypeToSqlDbType.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Byte\System.Math\Byte.Max.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Byte\System.Math\Byte.Min.cs" />
@@ -216,7 +215,6 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.Age.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.Elapsed.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.EndOfDay.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.EndOfMonth.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.EndOfWeek.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.EndOfYear.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.FirstDayOfWeek.cs" />
@@ -237,8 +235,6 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.StartOfWeek.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.StartOfYear.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.ToEpochTimeSpan.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.Tomorrow.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\DateTime.Yesterday.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\System.TimeZone\DateTime.IsDaylightSavingTime.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\System.TimeZoneInfo\DateTime.ConvertTime.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.DateTime\System.TimeZoneInfo\DateTime.ConvertTimeBySystemTimeZoneId.cs" />
@@ -632,9 +628,7 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsNotEmpty.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsNotNullOrEmpty.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsNotNullOrWhiteSpace.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsNullOrEmpty.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsNumeric.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.IsPalindrome.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.Left.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.LeftSafe.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.Nl2Br.cs" />
@@ -650,7 +644,6 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.ReplaceFirst.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.ReplaceLast.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.ReplaceWhenEquals.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.Reverse.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.Right.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.RightSafe.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.String\String.SaveAs.cs" />
@@ -726,9 +719,6 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.TimeSpan\TimeSpan.FromNow.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.TimeSpan\TimeSpan.UtcAgo.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.TimeSpan\TimeSpan.UtcFromNow.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Type\System.Activator\Type.CreateInstance.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Type\System.Activator\Type.GetObject.cs" />
-    <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.Type\Type.CreateInstance.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.UInt16\_CoreObject\UInt16.Between.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.UInt16\_CoreObject\UInt16.In.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\System.UInt16\_CoreObject\UInt16.InRange.cs" />
@@ -762,6 +752,62 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\TArray\System.Array\TArray.ForEach.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\TArray\System.Array\TArray.TrueForAll.cs" />
     <Compile Include="Assets\UtilityScripts\EventExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\BoolExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ComparableExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\CompressionExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ComputerSizingExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ConversionExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\CryptoExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Data Types\Money.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Data Types\Percentage.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\DateTimeExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\DictionaryExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\EmailValidator.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\EnumExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ExceptionExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\FileExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\GenericExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\LINQEnumerableExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ListExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\MaybeMonad.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\NumberExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ObjectExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ReadWriteLockSlimExtend.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\SerializationExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Spawner\MonoSingletonExt.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Spawner\Spawner.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Spawner\SpawnerBreeder.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Spawner\SpawnerPool.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\StringExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\TimeSpanExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\LayerMaskExtension.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\TargetingExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityFileExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityGoExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityMathExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityMovement.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityRotateExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnitySpawningExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityTransformExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\Unity\UnityXMLSerializationExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\ColorSpace.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\ColorX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\ComponentExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\HSL.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\HSV.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\IEnumerableExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\MathX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Matrix4x4X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Resources.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\StringExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Texture2DX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\TransformX.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Vector2X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Vector3X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\UnityExtensions\Vector4X.cs" />
+    <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\XMLExtensions.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\FollowTarget.cs" />
     <Compile Include="Assets\UtilityScripts\GameObjects\SceneViewIcon.cs" />
@@ -780,24 +826,6 @@
     <Compile Include="Assets\UtilityScripts\General\UnityHelper.cs" />
     <Compile Include="Assets\UtilityScripts\Physics\DragRigidbody.cs" />
     <Compile Include="Assets\UtilityScripts\UI\AlphaButtonClickMask.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\ColorSpace.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\ColorX.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\ComponentExtensions.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Dispatcher.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\GameObjectExtensions.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\GUIX.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\HSL.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\HSV.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\IEnumerableExtensions.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\MathX.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Matrix4x4X.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Resources.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\StringExtensions.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Texture2DX.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\TransformX.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Vector2X.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Vector3X.cs" />
-    <Compile Include="Assets\UtilityScripts\UnityExtensions\Vector4X.cs" />
     <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\Note.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\Packs\Prototyping\Shaders\WorldCoordDiffuse.shader" />
@@ -834,14 +862,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -1034,6 +1062,9 @@
     </Reference>
     <Reference Include="InspectorGadgets.Lite">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/UtilityScripts/Extension Methods for Unity/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

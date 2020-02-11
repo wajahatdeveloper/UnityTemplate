@@ -298,6 +298,9 @@
     <Reference Include="InspectorGadgets.Lite">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Plugins/Inspector Gadgets/InspectorGadgets.Lite.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:/Users/Zainab/Documents/Template/Assets/UtilityScripts/Extension Methods for Unity/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
