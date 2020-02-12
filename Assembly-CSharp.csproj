@@ -63,14 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Datasets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Code\Scripts\Controllers\AudioController.cs" />
     <Compile Include="Assets\Code\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\Code\Scripts\Controllers\ScoreController.cs" />
+    <Compile Include="Assets\Code\Scripts\Controllers\UIController.cs" />
+    <Compile Include="Assets\Code\Scripts\Entities\Stick.cs" />
     <Compile Include="Assets\Code\Scripts\Global\GlobalData.cs" />
     <Compile Include="Assets\Code\Scripts\Global\SceneScopeReferences.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\CustomScriptTexture.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\Loader.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\MouseDrag.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\ObjectRotator.cs" />
+    <Compile Include="Assets\Code\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Code\Scripts\Player\PlayerInput.cs" />
+    <Compile Include="Assets\Code\Scripts\Player\PlayerInteraction.cs" />
+    <Compile Include="Assets\Code\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\InGameInterface.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\InGameLogic.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\MainMenuInterface.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\MainMenuLogic.cs" />
+    <Compile Include="Assets\Code\Scripts\UI\ScoreUI.cs" />
     <Compile Include="Assets\Libraries\AnimatorStateMachineUtil\Scripts\AnimatorStateMachineUtil.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
@@ -120,6 +133,14 @@
     <Compile Include="Assets\Libraries\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\Libraries\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Libraries\StateMachine\StateMachineRunner.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\DialogResult.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\MenuBox.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\MessageBox.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\MessageBoxButtons.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\MessageBoxExample.cs" />
+    <Compile Include="Assets\Libraries\uGUI Message Box Modal Dialog\Source\ModalBox.cs" />
+    <Compile Include="Assets\Packs\UGUIKit Flat\Content\Scripts\bl_ProgressBar.cs" />
+    <Compile Include="Assets\Packs\UGUIKit Flat\Content\Scripts\bl_ToggleSwitcher.cs" />
     <Compile Include="Assets\UtilityScripts\Camera\Camera2DFollow.cs" />
     <Compile Include="Assets\UtilityScripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddIf.cs" />
@@ -834,12 +855,14 @@
     <None Include="Assets\Libraries\LeanTween\ReadMe.txt" />
     <None Include="Assets\Code\Shaders\ScreenSpaceGradient.shader" />
     <None Include="Assets\Docs\Structure.txt" />
+    <None Include="Assets\Libraries\uGUI Message Box Modal Dialog\readme.txt" />
     <None Include="Assets\Art\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Code\Shaders\TransFadeShader.shader" />
     <None Include="Assets\Libraries\Demigiant\DemiLib\Core\DemiLib.xml" />
     <None Include="Assets\Libraries\LeanTween\License.txt" />
     <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Readme.txt" />
+    <None Include="Assets\Packs\UGUIKit Flat\ReadMe.txt" />
     <None Include="Assets\Libraries\Demigiant\readme_DOTweenPro.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

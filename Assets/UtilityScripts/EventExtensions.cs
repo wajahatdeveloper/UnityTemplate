@@ -6,14 +6,16 @@ using UnityEngine;
 public static class EventExtensions
 {
 
+	public delegate void EventWithData(GameObject sender, object data);
+
 	/// <summary>
 	/// Look up Event Name
 	///		Look up GameObject
 	///			Look up EventHandlers
 	/// </summary>
-	public static Dictionary<string, Dictionary<GameObject, List<Action>>> eventHandlers = new Dictionary<string, Dictionary<GameObject, List<Action>>>();
+	public static Dictionary<string, Dictionary<GameObject, List<EventWithData>>> eventHandlers = new Dictionary<string, Dictionary<GameObject, List<EventWithData>>>();
 
-	public static void ConnectEvent(this GameObject listener, string eventName, Action func)
+	public static void ConnectEvent(this GameObject listener, string eventName, EventWithData func)
 	{
 		if (eventName.IsEmpty())
 		{
@@ -31,13 +33,13 @@ public static class EventExtensions
 			}
 			else
 			{
-				eventHandlers[eventName].Add(listener, new List<Action>() { func });
+				eventHandlers[eventName].Add(listener, new List<EventWithData>() { func });
 			}
 		}
 		else
 		{
-			eventHandlers.Add(eventName, new Dictionary<GameObject, List<Action>>());
-			eventHandlers[eventName].Add(listener, new List<Action>() { func });
+			eventHandlers.Add(eventName, new Dictionary<GameObject, List<EventWithData>>());
+			eventHandlers[eventName].Add(listener, new List<EventWithData>() { func });
 		}
 	}
 
@@ -52,7 +54,7 @@ public static class EventExtensions
 		eventHandlers[eventName].Remove(listener);
 	}
 
-	public static void RaiseEvent(this GameObject sender, string eventName)
+	public static void RaiseEvent(this GameObject sender, string eventName, object eventData = null)
 	{
 		if (eventHandlers.ContainsKey(eventName) == false)
 		{
@@ -64,7 +66,7 @@ public static class EventExtensions
 		{
 			foreach (var handler in item.Value)
 			{
-				handler();
+				handler(sender, eventData);
 			}
 		}
 	}
