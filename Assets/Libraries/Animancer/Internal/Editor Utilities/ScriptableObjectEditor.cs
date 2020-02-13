@@ -1,9 +1,5 @@
 // Animancer // Copyright 2019 Kybernetik //
 
-// Uncomment this #define to apply this custom editor to all ScriptableObjects.
-// If you have another plugin with a custom ScriptableObject editor, you will probably want that one instead.
-//#define ANIMANCER_SCRIPTABLE_OBJECT_EDITOR
-
 #if UNITY_EDITOR
 
 using UnityEditor;
@@ -12,20 +8,18 @@ using UnityEngine;
 namespace Animancer.Editor
 {
     /// <summary>[Editor-Only]
-    /// A custom Inspector for <see cref="ScriptableObject"/>s which adds a message explaining that changes in play
+    /// A custom inspector for <see cref="ScriptableObject"/>s which adds a message explaining that changes in play
     /// mode will persist.
     /// </summary>
-#if ANIMANCER_SCRIPTABLE_OBJECT_EDITOR
     [CustomEditor(typeof(ScriptableObject), true, isFallback = true), CanEditMultipleObjects]
-#endif
     public class ScriptableObjectEditor : UnityEditor.Editor
     {
         /************************************************************************************************************************/
 
         /// <summary>
-        /// Called by the Unity editor to draw the custom Inspector GUI elements.
+        /// Called by the Unity editor to draw the custom inspector GUI elements.
         /// <para></para>
-        /// Draws the regular Inspector then adds a message explaining that changes in Play Mode will persist.
+        /// Draws the regular inspector then adds a message explaining that changes in play mode will persist.
         /// </summary>
         public override void OnInspectorGUI()
         {
@@ -44,4 +38,3 @@ namespace Animancer.Editor
 }
 
 #endif
-

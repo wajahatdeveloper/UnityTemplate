@@ -63,12 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\AdvancedPlayerPrefsWindow\DemoScene\GUIView.cs" />
-    <Compile Include="Assets\Plugins\AutoRefs\Examples\AdvancedExample\AdvancedExample.cs" />
-    <Compile Include="Assets\Plugins\AutoRefs\Examples\BasicExample\BasicExample.cs" />
-    <Compile Include="Assets\Plugins\AutoRefs\Examples\Shared\TestRef.cs" />
-    <Compile Include="Assets\Plugins\AutoRefs\Examples\Shared\TestRefAlternate.cs" />
-    <Compile Include="Assets\Plugins\AutoRefs\Scripts\AutoRefsAttributes.cs" />
     <Compile Include="Assets\Plugins\FastGizmos\Scripts\FastGizmos.cs" />
     <Compile Include="Assets\Plugins\FastGizmos\Scripts\FastGizmosExtra.cs" />
     <Compile Include="Assets\Plugins\FastGizmos\Scripts\FastGizmosHandleText.cs" />
@@ -77,7 +71,6 @@
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
     <Compile Include="Assets\Plugins\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <None Include="Assets\Plugins\Asset Usage Finder\readme.txt" />
-    <None Include="Assets\Plugins\AutoRefs\Documentation\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Zainab/Documents/Template/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -278,9 +271,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>

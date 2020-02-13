@@ -9,7 +9,7 @@ namespace Animancer
     /// determined by the <see cref="Renderer"/> while wrapping the value to keep it as close to 0 as possible.
     /// </summary>
     [AddComponentMenu("Animancer/Pixel Perfect Positioning")]
-    [HelpURL(Strings.APIDocumentationURL + "/Pixel Perfect Positioning")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + "/Pixel Perfect Positioning")]
     public sealed class PixelPerfectPositioning : MonoBehaviour
     {
         /************************************************************************************************************************/

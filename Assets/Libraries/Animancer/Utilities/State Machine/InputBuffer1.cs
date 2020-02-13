@@ -55,17 +55,16 @@ namespace Animancer.FSM
             /// </summary>
             public bool TrySetState(TState state, float timeOut)
             {
-                BufferedState = state;
-                TimeOut = timeOut;
-
-                // If you can enter that state immediately, clear the buffer.
+                // If you can enter the target state, clear the buffer.
                 if (TryEnterBufferedState())
                 {
                     Clear();
                     return true;
                 }
-                else
+                else// Otherwise buffer the target state.
                 {
+                    BufferedState = state;
+                    TimeOut = timeOut;
                     return false;
                 }
             }
@@ -77,29 +76,19 @@ namespace Animancer.FSM
             /// </summary>
             protected virtual bool TryEnterBufferedState()
             {
-                return StateMachine.TryResetState(BufferedState);
+                return StateMachine.TrySetState(BufferedState);
             }
 
             /************************************************************************************************************************/
 
             /// <summary>
             /// Attempts to enter the <see cref="BufferedState"/> if there is one and returns true if successful.
-            /// Otherwise the <see cref="TimeOut"/> is decreased by <see cref="Time.deltaTime"/> and the
-            /// <see cref="BufferedState"/> is forgotten after it reaches 0.
+            /// Otherwise the <see cref="TimeOut"/> is decreased by <see cref="Time.deltaTime"/> and the state is
+            /// forgotten after it reaches 0.
             /// <para></para>
             /// If <see cref="UseUnscaledTime"/> is true, it will use <see cref="Time.unscaledDeltaTime"/> instead.
             /// </summary>
             public bool Update()
-            {
-                return Update(UseUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime);
-            }
-
-            /// <summary>
-            /// Attempts to enter the <see cref="BufferedState"/> if there is one and returns true if successful.
-            /// Otherwise the <see cref="TimeOut"/> is decreased by 'deltaTime' and the <see cref="BufferedState"/> is
-            /// forgotten after it reaches 0.
-            /// </summary>
-            public bool Update(float deltaTime)
             {
                 if (IsBufferActive)
                 {
@@ -110,7 +99,7 @@ namespace Animancer.FSM
                     }
                     else
                     {
-                        TimeOut -= deltaTime;
+                        TimeOut -= UseUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
 
                         if (TimeOut <= 0)
                             Clear();

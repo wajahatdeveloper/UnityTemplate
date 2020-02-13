@@ -1,5 +1,7 @@
 // Animancer // Copyright 2019 Kybernetik //
 
+#pragma warning disable IDE0018 // Inline variable declaration.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +15,7 @@ namespace Animancer.FSM
     /// See <see cref="StateMachine{TState}"/> for a system that does not bother keeping track of any states other than
     /// the active one.
     /// </summary>
-    [HelpURL(Strings.APIDocumentationURL + ".FSM/StateMachine_2")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + ".FSM/StateMachine_2")]
     public partial class StateMachine<TKey, TState> : StateMachine<TState>, IDictionary<TKey, TState>
         where TState : class, IState<TState>
     {

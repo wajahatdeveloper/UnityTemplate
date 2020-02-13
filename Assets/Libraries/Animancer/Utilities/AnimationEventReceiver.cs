@@ -10,23 +10,27 @@ namespace Animancer
     /// A callback to be invoked by Animation Events that have been triggered by a specific animation.
     /// </summary>
     /// <example>
-    /// To set up a receiver for an Animation Event with the Function Name "Event":
-    /// <para></para><code>
-    /// /// &lt;summary&gt;A callback for Animation Events with the Function Name "Event".&lt;/summary&gt;
+    /// <para>To set up a receiver for an Animation Event with the Function Name "Event":</para>
+    /// <code>
+    /// /// &lt;summary&gt;A callback for Animation Events with the function name "Event".&lt;/summary&gt;
     /// public AnimationEventReceiver onEvent;
     /// 
-    /// /// &lt;summary&gt;Called by Animation Events.&lt;/summary&gt;
-    /// private void Event(AnimationEvent animationEvent)
+    /// /// &lt;summary&gt;Constructs a new &lt;see cref="MyClass"&gt;.&lt;/summary&gt;
+    /// public MyClass()
     /// {
     ///     // This is optional and will automatically be compiled out of runtime builds.
     ///     // It allows the receiver to perform additional safety checks.
     ///     onEvent.SetFunctionName("Event");
-    ///     
+    /// }
+    /// 
+    /// /// &lt;summary&gt;Called by Animation Events.&lt;/summary&gt;
+    /// private void Event(AnimationEvent animationEvent)
+    /// {
     ///     onEvent.HandleEvent(animationEvent);
     /// }
     /// </code>
-    /// Then to register a callback to that receiver:
-    /// <para></para><code>
+    /// <para>Then to register a callback to that receiver:</para>
+    /// <code>
     /// var state = animancer.Play(clip);
     /// onEvent.Set(state, (animationEvent) =>
     /// {
@@ -115,9 +119,9 @@ namespace Animancer
 #endif
 
         /// <summary>[Editor-Conditional]
-        /// Sets the <see cref="FunctionName"/> so <see cref="Set"/> can perform additional safety checks to ensure
-        /// that the <see cref="AnimancerState.Clip"/> actually has an event with the expected 'name' and also to allow
-        /// <see cref="HandleEvent"/> to verify that any events it is given have that 'name' as well.
+        /// Sets the <see cref="FunctionName"/> to allow <see cref="Set"/> to perform additional safety checks to
+        /// ensure that the <see cref="AnimancerState.Clip"/> actually has an event with the expected 'name' and also
+        /// to allow <see cref="HandleEvent"/> to verify that any events it is given have that 'name' as well.
         /// </summary>
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
         public void SetFunctionName(string name)

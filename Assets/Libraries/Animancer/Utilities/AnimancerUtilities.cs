@@ -49,9 +49,6 @@ namespace Animancer
         /// <summary>[Pro-Only]
         /// Calculates all thresholds using the <see cref="Motion.averageSpeed"/> of each state.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public static void CalculateThresholdsFromAverageVelocityXZ(this MixerState<Vector2> mixer)
         {
             mixer.ValidateThresholdCount();
@@ -127,40 +124,6 @@ namespace Animancer
                     }
                 };
             }
-#endif
-        }
-
-        /************************************************************************************************************************/
-
-        /// <summary>[Editor-Conditional]
-        /// Plays the specified 'clip' if called in Edit Mode and optionally pauses it immediately.
-        /// </summary>
-        /// <remarks>
-        /// Before Unity 2018.3, playing animations in Edit Mode didn't work properly.
-        /// </remarks>
-        [System.Diagnostics.Conditional("UNITY_EDITOR")]
-        public static void EditModePlay(AnimancerComponent animancer, AnimationClip clip, bool pauseImmediately = true)
-        {
-#if UNITY_EDITOR
-            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode ||
-                animancer == null || clip == null)
-                return;
-
-            // Delay for a frame in case this was called at a bad time (such as during OnValidate).
-            UnityEditor.EditorApplication.delayCall += () =>
-            {
-                if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode ||
-                    animancer == null || clip == null)
-                    return;
-
-                animancer.Play(clip);
-
-                if (pauseImmediately)
-                {
-                    animancer.Evaluate();
-                    animancer.Playable.PauseGraph();
-                }
-            };
 #endif
         }
 

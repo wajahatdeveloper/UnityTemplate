@@ -41,7 +41,7 @@ namespace Animancer.FSM
     /// <summary>
     /// Various extension methods for <see cref="IOwnedState{TState}"/>.
     /// </summary>
-    [HelpURL(Strings.APIDocumentationURL + ".FSM/StateExtensions")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + ".FSM/StateExtensions")]
     public static class StateExtensions
     {
         /************************************************************************************************************************/

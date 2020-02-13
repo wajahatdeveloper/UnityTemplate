@@ -105,11 +105,4 @@ namespace Animancer
 
         /************************************************************************************************************************/
     }
-
-    /************************************************************************************************************************/
-
-#if UNITY_EDITOR
-    [UnityEditor.CustomEditor(typeof(AnimancerTransition<,>), true)]
-    internal class AnimancerTransitionEditor : Editor.ScriptableObjectEditor { }
-#endif
 }

@@ -19,7 +19,7 @@ namespace Animancer
     /// <see cref="UnityEngine.Animator"/>.
     /// </remarks>
     [AddComponentMenu("Animancer/Animancer Component")]
-    [HelpURL(Strings.APIDocumentationURL + "/AnimancerComponent")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + "/AnimancerComponent")]
     [DefaultExecutionOrder(-5000)]// Initialise before anything else tries to use this component.
     public class AnimancerComponent : MonoBehaviour, IAnimancerComponent, IEnumerable<AnimancerState>, IEnumerator, IAnimationClipSource
     {
@@ -34,7 +34,6 @@ namespace Animancer
 
         [SerializeField]
         [Tooltip("The Animator component which this script controls")]
-        [System.Reflection.Obfuscation(Exclude = false, Feature = "-rename")]
         private Animator _Animator;
 
         /// <summary>The <see cref="UnityEngine.Animator"/> component which this script controls.</summary>
@@ -46,9 +45,17 @@ namespace Animancer
 #if UNITY_EDITOR
                 Editor.AnimancerEditorUtilities.SetIsInspectorExpanded(_Animator, true);
                 Editor.AnimancerEditorUtilities.SetIsInspectorExpanded(value, false);
+
+                if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+                {
+                    _Animator = value;
+                    return;
+                }
 #endif
 
-                // It doesn't seem to be possible to stop the old Animator from playing the graph.
+                // Disable the previous Animator so it stops playing the graph.
+                if (_Playable != null && _Animator != null)
+                    _Animator.enabled = false;
 
                 _Animator = value;
                 AnimancerPlayable.Play(_Animator, _Playable);
@@ -238,7 +245,7 @@ namespace Animancer
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only]
-        /// Called by the Unity Editor when this component is first added (in Edit Mode) and whenever the Reset command
+        /// Called by the Unity Editor when this component is first added (in edit mode) and whenever the Reset command
         /// is executed from its context menu.
         /// <para></para>
         /// Destroys the playable if one has been initialised.
@@ -260,8 +267,8 @@ namespace Animancer
                 _Animator.runtimeAnimatorController = null;
                 Editor.AnimancerEditorUtilities.SetIsInspectorExpanded(_Animator, false);
 
-                // Collapse the Animator property because the custom Inspector uses that to control whether the
-                // Animator's Inspector is expanded.
+                // Collapse the Animator property because the custom inspector uses that to control whether the
+                // Animator's inspector is expanded.
                 using (var serializedObject = new UnityEditor.SerializedObject(this))
                 {
                     var property = serializedObject.FindProperty("_Animator");
@@ -317,8 +324,7 @@ namespace Animancer
             if (IsPlayableInitialised)
                 return;
 
-            AnimancerPlayable.SetNextGraphName(name + ".Animancer");
-            _Playable = AnimancerPlayable.Create();
+            _Playable = AnimancerPlayable.CreatePlayable(name);
 
             if (_Animator != null)
             {
@@ -619,35 +625,6 @@ namespace Animancer
         }
 
         /************************************************************************************************************************/
-
-        /// <summary>
-        /// Calls <see cref="AnimancerState.Dispose"/> on the state associated with the 'clip' (if any).
-        /// Returns true if the state existed.
-        /// </summary>
-        public bool Dispose(AnimationClip clip)
-        {
-            return Dispose(GetKey(clip));
-        }
-
-        /// <summary>
-        /// Calls <see cref="AnimancerState.Dispose"/> on the state associated with the <see cref="IHasKey.Key"/>
-        /// (if any). Returns true if the state existed.
-        /// </summary>
-        public bool Dispose(IHasKey hasKey)
-        {
-            return _Playable != null && _Playable.Dispose(hasKey);
-        }
-
-        /// <summary>
-        /// Calls <see cref="AnimancerState.Dispose"/> on the state associated with the 'key' (if any).
-        /// Returns true if the state existed.
-        /// </summary>
-        public bool Dispose(object key)
-        {
-            return _Playable != null && _Playable.Dispose(key);
-        }
-
-        /************************************************************************************************************************/
         #endregion
         /************************************************************************************************************************/
         #region Layers
@@ -656,9 +633,6 @@ namespace Animancer
         /// <summary>[Pro-Only]
         /// The number of animation layers in the graph.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public int LayerCount
         {
             get
@@ -676,9 +650,6 @@ namespace Animancer
         /// <summary>[Pro-Only]
         /// If the <see cref="LayerCount"/> is below the specified 'min', this method sets it to that value.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public void SetMinLayerCount(int min)
         {
             Playable.SetMinLayerCount(min);
@@ -700,9 +671,6 @@ namespace Animancer
         /// Creates and returns a new <see cref="AnimancerLayer"/>. New layers are set to override earlier layers by
         /// default.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public AnimancerLayer AddLayer()
         {
             return Playable.AddLayer();
@@ -714,9 +682,6 @@ namespace Animancer
         /// Checks whether the layer at the specified index is set to additive blending. Otherwise it will override any
         /// earlier layers.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public bool IsLayerAdditive(int layerIndex)
         {
             return Playable.IsLayerAdditive(layerIndex);
@@ -726,9 +691,6 @@ namespace Animancer
         /// Sets the layer at the specified index to blend additively with earlier layers (if true) or to override them
         /// (if false). Newly created layers will override by default.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public void SetLayerAdditive(int layerIndex, bool value)
         {
             Playable.SetLayerAdditive(layerIndex, value);
@@ -739,9 +701,6 @@ namespace Animancer
         /// <summary>[Pro-Only]
         /// Sets an <see cref="AvatarMask"/> to determine which bones the layer at the specified index will affect.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public void SetLayerMask(int layerIndex, AvatarMask mask)
         {
             Playable.SetLayerMask(layerIndex, mask);
@@ -750,7 +709,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>[Editor-Conditional]
-        /// Sets the Inspector display name of the layer at the specified index. Note that layer names are Editor-Only
+        /// Sets the inspector display name of the layer at the specified index. Note that layer names are Editor-Only
         /// so any calls to this method will automatically be compiled out of a runtime build.
         /// </summary>
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
@@ -793,6 +752,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState Play(AnimancerState state)
         {
+            _Animator.enabled = true;
             return Playable.Play(state);
         }
 
@@ -805,6 +765,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState Play(object key)
         {
+            _Animator.enabled = true;
             return Playable.Play(key);
         }
 
@@ -848,6 +809,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState CrossFade(AnimancerState state, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
+            _Animator.enabled = true;
             return Playable.CrossFade(state, fadeDuration);
         }
 
@@ -868,6 +830,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState CrossFade(object key, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
+            _Animator.enabled = true;
             return Playable.CrossFade(key, fadeDuration);
         }
 
@@ -928,6 +891,7 @@ namespace Animancer
         /// </remarks>
         public AnimancerState CrossFadeFromStart(AnimancerState state, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
+            _Animator.enabled = true;
             return Playable.CrossFadeFromStart(state, fadeDuration);
         }
 
@@ -956,6 +920,7 @@ namespace Animancer
         /// </remarks>
         public AnimancerState CrossFadeFromStart(object key, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
+            _Animator.enabled = true;
             return Playable.CrossFadeFromStart(key, fadeDuration);
         }
 
@@ -967,6 +932,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState Transition(IAnimancerTransition transition, int layerIndex = 0)
         {
+            _Animator.enabled = true;
             return Playable.Transition(transition, layerIndex);
         }
 
@@ -1118,20 +1084,14 @@ namespace Animancer
         // State Creation and Access.
         /************************************************************************************************************************/
 
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// The whole point of a key is to identify a state in the first place.
-        /// </summary>
+        /// <summary>[Warning] You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.</summary>
         [Obsolete("You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.", true)]
         public AnimancerState GetState(AnimancerState key)
         {
             return key;
         }
 
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// The whole point of a key is to identify a state in the first place.
-        /// </summary>
+        /// <summary>[Warning] You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.</summary>
         [Obsolete("You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.", true)]
         public bool TryGetState(AnimancerState key, out AnimancerState state)
         {
@@ -1139,10 +1099,7 @@ namespace Animancer
             return true;
         }
 
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// The whole point of a key is to identify a state in the first place.
-        /// </summary>
+        /// <summary>[Warning] You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.</summary>
         [Obsolete("You cannot use an AnimancerState as a key. The whole point of a key is to identify a state in the first place.", true)]
         public AnimancerState GetOrCreateState(AnimancerState key, AnimationClip clip, int layerIndex = 0)
         {
@@ -1164,7 +1121,7 @@ namespace Animancer
         /// Play(state, fadeDuration);
         /// </code>.
         /// </summary>
-        [Obsolete("Transitions should be started using Transition() so they can choose between" +
+        [Obsolete("Transitions should be started using Transition so they can choose between" +
             " Play, CrossFade, and CrossFadeFromStart on their own.", true)]
         public AnimancerState Play(IAnimancerTransition transition)
         {
@@ -1182,7 +1139,7 @@ namespace Animancer
         /// CrossFade(state, fadeDuration);
         /// </code>.
         /// </summary>
-        [Obsolete("Transitions should be started using Transition() so they can choose between" +
+        [Obsolete("Transitions should be started using Transition so they can choose between" +
             " Play, CrossFade, and CrossFadeFromStart on their own.", true)]
         public AnimancerState CrossFade(IAnimancerTransition transition, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
@@ -1200,7 +1157,7 @@ namespace Animancer
         /// CrossFadeFromStart(state, fadeDuration);
         /// </code>.
         /// </summary>
-        [Obsolete("Transitions should be started using Transition() so they can choose between" +
+        [Obsolete("Transitions should be started using Transition so they can choose between" +
             " Play, CrossFade, and CrossFadeFromStart on their own.", true)]
         public AnimancerState CrossFadeFromStart(IAnimancerTransition transition, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
@@ -1209,9 +1166,7 @@ namespace Animancer
 
         /************************************************************************************************************************/
 
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// Just call Stop() on the state itself.</summary>
+        /// <summary>[Warning] You cannot use an AnimancerState as a key. Just call Stop() on the state itself.</summary>
         [Obsolete("You cannot use an AnimancerState as a key. Just call Stop() on the state itself.", true)]
         public AnimancerState Stop(AnimancerState key)
         {
@@ -1219,26 +1174,11 @@ namespace Animancer
             return key;
         }
 
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// Just check IsPlaying on the state itself.</summary>
+        /// <summary>[Warning] You cannot use an AnimancerState as a key. Just check IsPlaying on the state itself.</summary>
         [Obsolete("You cannot use an AnimancerState as a key. Just check IsPlaying on the state itself.", true)]
         public bool IsPlaying(AnimancerState key)
         {
             return key.IsPlaying;
-        }
-
-        /************************************************************************************************************************/
-
-        /// <summary>[Warning]
-        /// You should not use an <see cref="AnimancerState"/> as a key.
-        /// Just call <see cref="AnimancerState.Dispose"/> on the state itself.
-        /// </summary>
-        [Obsolete("You cannot use an AnimancerState as a key. Just call Dispose() on the state itself.", true)]
-        public bool Dispose(AnimancerState key)
-        {
-            key.Dispose();
-            return true;
         }
 
         /************************************************************************************************************************/

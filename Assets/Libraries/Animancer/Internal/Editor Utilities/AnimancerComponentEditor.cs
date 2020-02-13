@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Animancer.Editor
 {
     /// <summary>[Editor-Only]
-    /// A custom Inspector for <see cref="AnimancerComponent"/>s.
+    /// A custom inspector for <see cref="AnimancerComponent"/>s.
     /// </summary>
     [CustomEditor(typeof(AnimancerComponent), true), CanEditMultipleObjects]
     public class AnimancerComponentEditor : AnimancerPlayableEditor
@@ -17,15 +17,12 @@ namespace Animancer.Editor
         /************************************************************************************************************************/
 
         /// <summary>The priority of all context menu items added by this class.</summary>
-        public const int MenuItemPriority = 2000;
-
-        /// <summary>The start of all <see cref="AnimancerComponent"/> context menu items.</summary>
-        public const string MenuItemPrefix = "CONTEXT/AnimancerComponent/";
+        protected const int MenuItemPriority = 2000;
 
         /************************************************************************************************************************/
 
         /// <summary>Returns <see cref="AnimancerPlayable.IsGraphPlaying"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Pause Graph", validate = true)]
+        [MenuItem("CONTEXT/AnimancerComponent/Pause Graph", validate = true)]
         private static bool ValidatePauseGraph(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -35,7 +32,7 @@ namespace Animancer.Editor
         }
 
         /// <summary>Calls <see cref="AnimancerPlayable.PauseGraph()"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Pause Graph", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/AnimancerComponent/Pause Graph", priority = MenuItemPriority)]
         private static void PauseGraph(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -45,7 +42,7 @@ namespace Animancer.Editor
         /************************************************************************************************************************/
 
         /// <summary>Returns !<see cref="AnimancerPlayable.IsGraphPlaying"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Unpause Graph", validate = true)]
+        [MenuItem("CONTEXT/AnimancerComponent/Unpause Graph", validate = true)]
         private static bool ValidatePlayGraph(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -55,7 +52,7 @@ namespace Animancer.Editor
         }
 
         /// <summary>Calls <see cref="AnimancerPlayable.UnpauseGraph()"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Unpause Graph", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/AnimancerComponent/Unpause Graph", priority = MenuItemPriority)]
         private static void PlayGraph(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -68,7 +65,7 @@ namespace Animancer.Editor
         /// <summary>
         /// Returns <see cref="AnimancerComponent.IsPlayableInitialised"/>.
         /// </summary>
-        [MenuItem(MenuItemPrefix + "Stop All Animations", validate = true)]
+        [MenuItem("CONTEXT/AnimancerComponent/Stop All Animations", validate = true)]
         private static bool ValidateStop(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -76,7 +73,7 @@ namespace Animancer.Editor
         }
 
         /// <summary>Calls <see cref="AnimancerComponent.Stop()"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Stop All Animations", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/AnimancerComponent/Stop All Animations", priority = MenuItemPriority)]
         private static void Stop(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -87,7 +84,7 @@ namespace Animancer.Editor
         /************************************************************************************************************************/
 
         /// <summary>Logs a description of all states currently in the <see cref="AnimancerComponent.Playable"/>.</summary>
-        [MenuItem(MenuItemPrefix + "Log Description of States", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/AnimancerComponent/Log Description of States", priority = MenuItemPriority)]
         private static void LogDescriptionOfStates(MenuCommand command)
         {
             var animancer = command.context as AnimancerComponent;
@@ -109,8 +106,30 @@ namespace Animancer.Editor
         }
 
         /************************************************************************************************************************/
+
+        /// <summary>Opens the Animancer Documentation website.</summary>
+        [MenuItem("CONTEXT/AnimancerComponent/Animancer Documentation", priority = MenuItemPriority)]
+        private static void OpenUserManual(MenuCommand command)
+        {
+            EditorUtility.OpenWithDefaultApp(AnimancerPlayable.APIDocumentationURL);
+        }
+
+        /************************************************************************************************************************/
+
+        /// <summary>The email address which handles support for Animancer.</summary>
+        public const string DeveloperEmail = "AnimancerUnityPlugin@gmail.com";
+
+        /// <summary>Opens an email to "AnimancerUnityPlugin@gmail.com" and copies that string to the clipboard.</summary>
+        [MenuItem("CONTEXT/AnimancerComponent/Email Support (" + DeveloperEmail + ")", priority = MenuItemPriority)]
+        public static void EmailTheDeveloper()
+        {
+            EditorGUIUtility.systemCopyBuffer = DeveloperEmail;
+            Debug.Log("Copied '" + DeveloperEmail + "' to clipboard.");
+            Application.OpenURL("mailto:" + DeveloperEmail + "?subject=Animancer");
+        }
+
+        /************************************************************************************************************************/
     }
 }
 
 #endif
-

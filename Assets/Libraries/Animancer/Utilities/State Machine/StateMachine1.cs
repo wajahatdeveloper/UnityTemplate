@@ -1,5 +1,7 @@
 // Animancer // Copyright 2019 Kybernetik //
 
+#pragma warning disable IDE0019 // Use pattern matching.
+
 using System;
 using UnityEngine;
 
@@ -12,7 +14,7 @@ namespace Animancer.FSM
     /// See <see cref="StateMachine{TKey, TState}"/> for a system that allows states to be pre-registered and accessed
     /// using a separate key.
     /// </summary>
-    [HelpURL(Strings.APIDocumentationURL + ".FSM/StateMachine_1")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + ".FSM/StateMachine_1")]
     public partial class StateMachine<TState> where TState : class, IState<TState>
     {
         /************************************************************************************************************************/

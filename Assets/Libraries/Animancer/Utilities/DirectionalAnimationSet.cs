@@ -282,11 +282,6 @@ namespace Animancer
 #if UNITY_EDITOR
         /************************************************************************************************************************/
 
-        [UnityEditor.CustomEditor(typeof(DirectionalAnimationSet), true)]
-        private class Editor : Animancer.Editor.ScriptableObjectEditor { }
-
-        /************************************************************************************************************************/
-
         /// <summary>
         /// Attempts to assign the 'clip' to one of this set's fields based on its name and returns the direction index
         /// of that field (or -1 if it was unable to determine the direction).
@@ -412,7 +407,16 @@ namespace Animancer
                     if (clip == null)
                         continue;
 
-                    Animancer.Editor.AnimancerEditorUtilities.SetLooping(clip, !clip.isLooping);
+                    var settings = UnityEditor.AnimationUtility.GetAnimationClipSettings(clip);
+                    settings.loopTime = isLooping;
+                    UnityEditor.AnimationUtility.SetAnimationClipSettings(clip, settings);
+
+                    // None of these let us avoid the need to restart Unity.
+                    //AnimancerUtilities.SetDirty(clip);
+                    //UnityEditor.AssetDatabase.SaveAssets();
+
+                    //var path = UnityEditor.AssetDatabase.GetAssetPath(clip);
+                    //UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
                 }
 
                 break;

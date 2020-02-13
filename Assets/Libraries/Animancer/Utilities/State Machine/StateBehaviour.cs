@@ -7,7 +7,7 @@ namespace Animancer.FSM
     /// <summary>
     /// Base class for <see cref="MonoBehaviour"/> states to be used in a <see cref="StateMachine{TState}"/>.
     /// </summary>
-    [HelpURL(Strings.APIDocumentationURL + ".FSM/StateBehaviour_1")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + ".FSM/StateBehaviour_1")]
     public abstract class StateBehaviour<TState> : MonoBehaviour, IState<TState>
         where TState : StateBehaviour<TState>
     {
@@ -53,7 +53,7 @@ namespace Animancer.FSM
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only]
-        /// Called by the Unity Editor when this component is first added (in Edit Mode) and whenever the Reset command
+        /// Called by the Unity Editor when this component is first added (in edit mode) and whenever the Reset command
         /// is executed from its context menu.
         /// <para></para>
         /// States start disabled and only the current state gets enabled at runtime.

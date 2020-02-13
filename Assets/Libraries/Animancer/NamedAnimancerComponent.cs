@@ -17,7 +17,7 @@ namespace Animancer
     /// needing another script to control it, much like Unity's Legacy <see cref="Animation"/> component.
     /// </summary>
     [AddComponentMenu("Animancer/Named Animancer Component")]
-    [HelpURL(Strings.APIDocumentationURL + "/NamedAnimancerComponent")]
+    [HelpURL(AnimancerPlayable.APIDocumentationURL + "/NamedAnimancerComponent")]
     public class NamedAnimancerComponent : AnimancerComponent
     {
         /************************************************************************************************************************/
@@ -91,8 +91,8 @@ namespace Animancer
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only]
-        /// Called by the Unity Editor in Edit Mode whenever an instance of this script is loaded or a value is changed
-        /// in the Inspector.
+        /// Called by the Unity Editor in edit mode whenever an instance of this script is loaded or a value is changed
+        /// in the inspector.
         /// <para></para>
         /// Uses <see cref="ClipState.ValidateClip"/> to ensure that all of the clips in the <see cref="Animations"/>
         /// array are supported by the <see cref="Animancer"/> system and removes any others.
@@ -105,17 +105,17 @@ namespace Animancer
             for (int i = 0; i < _Animations.Length; i++)
             {
                 var clip = _Animations[i];
-                if (clip == null)
-                    continue;
-
-                try
+                if (clip != null)
                 {
-                    ClipState.ValidateClip(clip);
-                    continue;
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogException(ex, clip);
+                    try
+                    {
+                        ClipState.ValidateClip(clip);
+                        continue;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogException(ex, clip);
+                    }
                 }
 
                 Array.Copy(_Animations, i + 1, _Animations, i, _Animations.Length - (i + 1));
@@ -219,9 +219,6 @@ namespace Animancer
         /// Cross fades between each clip in the <see cref="Animations"/> array one after the other. Mainly useful for
         /// testing and showcasing purposes.
         /// </summary>
-#if !UNITY_EDITOR
-        [Obsolete(AnimancerPlayable.ProOnlyMessage)]
-#endif
         public IEnumerator CrossFadeAnimationsInSequence(float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
         {
             for (int i = 0; i < _Animations.Length; i++)

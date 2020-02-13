@@ -11,7 +11,7 @@ using Object = UnityEngine.Object;
 namespace Animancer.Editor
 {
     /// <summary>[Editor-Only]
-    /// A custom Inspector for <see cref="NamedAnimancerComponent"/>s.
+    /// A custom inspector for <see cref="NamedAnimancerComponent"/>s.
     /// </summary>
     [CustomEditor(typeof(NamedAnimancerComponent), true), CanEditMultipleObjects]
     public class NamedAnimancerComponentEditor : AnimancerComponentEditor
@@ -27,14 +27,12 @@ namespace Animancer.Editor
             switch (name)
             {
                 case "_PlayAutomatically":
-                    if (ShouldShowAnimationFields())
-                        DoDefaultAnimationField(property);
-                    return true;
+                    return !ShouldShowAnimationFields();
 
                 case "_Animations":
                     if (ShouldShowAnimationFields())
                     {
-                        //DoDefaultAnimationField(property);
+                        DoDefaultAnimationField(property);
                         DoAnimationsField(property, label);
                     }
                     return true;
@@ -46,11 +44,6 @@ namespace Animancer.Editor
 
         /************************************************************************************************************************/
 
-        /// <summary>
-        /// The <see cref="NamedAnimancerComponent.PlayAutomatically"/> and
-        /// <see cref="NamedAnimancerComponent.Animations"/> fields are only used on startup, so we don't need to show
-        /// them in Play Mode after the object is already enabled.
-        /// </summary>
         private bool ShouldShowAnimationFields()
         {
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
@@ -67,40 +60,32 @@ namespace Animancer.Editor
 
         /************************************************************************************************************************/
 
-        private void DoDefaultAnimationField(SerializedProperty playAutomatically)
+        private void DoDefaultAnimationField(SerializedProperty property)
         {
-            var area = AnimancerEditorUtilities.GetLayoutRect();
+            var area = AnimancerEditorUtilities.GetRect();
 
-            var playAutomaticallyWidth = EditorGUIUtility.labelWidth + GUI.skin.toggle.normal.background.width;
-            var playAutomaticallyArea = AnimancerEditorUtilities.StealFromLeft(ref area, playAutomaticallyWidth);
-            var label = AnimancerEditorUtilities.TempContent(playAutomatically);
-            EditorGUI.PropertyField(playAutomaticallyArea, playAutomatically, label);
+            var label = AnimancerEditorUtilities.TempContent("Default Animation",
+                "If 'Play Automatically' is enabled, this animation will be played by OnEnable");
 
             SerializedProperty firstElement;
             AnimationClip clip;
 
-            var animations = serializedObject.FindProperty("_Animations");
-            if (animations.arraySize > 0)
+            if (property.arraySize > 0)
             {
-                firstElement = animations.GetArrayElementAtIndex(0);
+                firstElement = property.GetArrayElementAtIndex(0);
                 clip = (AnimationClip)firstElement.objectReferenceValue;
-                EditorGUI.BeginProperty(area, null, firstElement);
+                label = EditorGUI.BeginProperty(area, label, firstElement);
             }
             else
             {
                 firstElement = null;
                 clip = null;
-                EditorGUI.BeginProperty(area, null, animations);
+                label = EditorGUI.BeginProperty(area, label, property);
             }
 
             EditorGUI.BeginChangeCheck();
 
-            var indentLevel = EditorGUI.indentLevel;
-            EditorGUI.indentLevel = 0;
-
-            clip = (AnimationClip)EditorGUI.ObjectField(area, GUIContent.none, clip, typeof(AnimationClip), true);
-
-            EditorGUI.indentLevel = indentLevel;
+            clip = (AnimationClip)EditorGUI.ObjectField(area, label, clip, typeof(AnimationClip), true);
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -108,22 +93,23 @@ namespace Animancer.Editor
                 {
                     if (firstElement == null)
                     {
-                        animations.arraySize = 1;
-                        firstElement = animations.GetArrayElementAtIndex(0);
+                        property.arraySize = 1;
+                        firstElement = property.GetArrayElementAtIndex(0);
                     }
 
                     firstElement.objectReferenceValue = clip;
                 }
                 else
                 {
-                    if (firstElement == null || animations.arraySize == 1)
-                        animations.arraySize = 0;
+                    if (firstElement == null || property.arraySize == 1)
+                        property.arraySize = 0;
                     else
                         firstElement.objectReferenceValue = clip;
                 }
             }
 
             EditorGUI.EndProperty();
+
         }
 
         /************************************************************************************************************************/
@@ -164,6 +150,8 @@ namespace Animancer.Editor
                 var element = property.GetArrayElementAtIndex(index);
                 element.objectReferenceValue = clip;
             });
+
+            GUILayout.Space(EditorGUIUtility.standardVerticalSpacing);
         }
 
         /************************************************************************************************************************/
@@ -178,7 +166,7 @@ namespace Animancer.Editor
             area.width += 5;
 
             var property = _Animations.serializedProperty;
-            var label = AnimancerEditorUtilities.TempContent(property);
+            var label = AnimancerEditorUtilities.TempContent(property.displayName, property.tooltip);
             EditorGUI.BeginProperty(area, label, property);
 
             if (_AnimationsArraySize == null)
@@ -202,7 +190,7 @@ namespace Animancer.Editor
 
         private void DrawAnimationElement(Rect area, int index, bool isActive, bool isFocused)
         {
-            if (index == 0)
+            if (index < PreviousAnimations.Count)
                 PreviousAnimations.Clear();
 
             var labelWidth = EditorGUIUtility.labelWidth;
@@ -212,7 +200,7 @@ namespace Animancer.Editor
 
             var color = GUI.color;
             var animation = element.objectReferenceValue;
-            if (animation == null || PreviousAnimations.Contains(animation))
+            if (PreviousAnimations.Contains(animation))
                 GUI.color = AnimancerEditorUtilities.WarningFieldColor;
             else
                 PreviousAnimations.Add(animation);
@@ -248,13 +236,8 @@ namespace Animancer.Editor
         #region Menu Items
         /************************************************************************************************************************/
 
-        /// <summary>The start of all <see cref="NamedAnimancerComponent"/> context menu items.</summary>
-        public new const string MenuItemPrefix = "CONTEXT/NamedAnimancerComponent/";
-
-        /************************************************************************************************************************/
-
-        [MenuItem(MenuItemPrefix + "Play Animations in Sequence", validate = true)]
-        [MenuItem(MenuItemPrefix + "Cross Fade Animations in Sequence", validate = true)]
+        [MenuItem("CONTEXT/NamedAnimancerComponent/Play Animations in Sequence", validate = true)]
+        [MenuItem("CONTEXT/NamedAnimancerComponent/Cross Fade Animations in Sequence", validate = true)]
         private static bool IsPlaying()
         {
             return EditorApplication.isPlaying;
@@ -263,7 +246,7 @@ namespace Animancer.Editor
         /************************************************************************************************************************/
 
         /// <summary>Starts <see cref="NamedAnimancerComponent.PlayAnimationsInSequence"/> as a coroutine.</summary>
-        [MenuItem(MenuItemPrefix + "Play Animations in Sequence", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/NamedAnimancerComponent/Play Animations in Sequence", priority = MenuItemPriority)]
         private static void PlayAnimationsInSequence(MenuCommand command)
         {
             var animancer = command.context as NamedAnimancerComponent;
@@ -271,7 +254,7 @@ namespace Animancer.Editor
         }
 
         /// <summary>Starts <see cref="NamedAnimancerComponent.CrossFadeAnimationsInSequence"/> as a coroutine.</summary>
-        [MenuItem(MenuItemPrefix + "Cross Fade Animations in Sequence", priority = MenuItemPriority)]
+        [MenuItem("CONTEXT/NamedAnimancerComponent/Cross Fade Animations in Sequence", priority = MenuItemPriority)]
         private static void CrossFadeAnimationsInSequence(MenuCommand command)
         {
             var animancer = command.context as NamedAnimancerComponent;
@@ -285,4 +268,3 @@ namespace Animancer.Editor
 }
 
 #endif
-

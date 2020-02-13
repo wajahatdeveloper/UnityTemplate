@@ -68,7 +68,6 @@
     <Compile Include="Assets\Code\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Code\Scripts\Controllers\ScoreController.cs" />
     <Compile Include="Assets\Code\Scripts\Controllers\UIController.cs" />
-    <Compile Include="Assets\Code\Scripts\Entities\Stick.cs" />
     <Compile Include="Assets\Code\Scripts\Global\GlobalData.cs" />
     <Compile Include="Assets\Code\Scripts\Global\SceneScopeReferences.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\CustomScriptTexture.cs" />
@@ -76,15 +75,7 @@
     <Compile Include="Assets\Code\Scripts\Misc\MouseDrag.cs" />
     <Compile Include="Assets\Code\Scripts\Misc\ObjectRotator.cs" />
     <Compile Include="Assets\Code\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Code\Scripts\Player\PlayerInput.cs" />
-    <Compile Include="Assets\Code\Scripts\Player\PlayerInteraction.cs" />
-    <Compile Include="Assets\Code\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\InGameInterface.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\InGameLogic.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\MainMenuInterface.cs" />
-    <Compile Include="Assets\Code\Scripts\UI\MainMenuLogic.cs" />
     <Compile Include="Assets\Code\Scripts\UI\ScoreUI.cs" />
-    <Compile Include="Assets\Libraries\AnimatorStateMachineUtil\Scripts\AnimatorStateMachineUtil.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\Libraries\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
@@ -98,31 +89,6 @@
     <Compile Include="Assets\Libraries\Demigiant\DOTweenPro\DOTweenTk2d.cs" />
     <Compile Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\GAui.cs" />
     <Compile Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\GSui.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\TestingPunch.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralBasic.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\LogoCinematic.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathBezier.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathBezier2d.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSpline.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSpline2d.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSplines.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
-    <Compile Include="Assets\Libraries\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Framework\LeanSmooth.cs" />
     <Compile Include="Assets\Libraries\LeanTween\Framework\LeanTest.cs" />
@@ -772,7 +738,7 @@
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\TArray\System.Array\TArray.FindLastIndex.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\TArray\System.Array\TArray.ForEach.cs" />
     <Compile Include="Assets\UtilityScripts\CSharpExtensions\Z.Core\TArray\System.Array\TArray.TrueForAll.cs" />
-    <Compile Include="Assets\UtilityScripts\EventExtensions.cs" />
+    <Compile Include="Assets\UtilityScripts\Events\EventExtensions.cs" />
     <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\BoolExtensions.cs" />
     <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\ComparableExtensions.cs" />
     <Compile Include="Assets\UtilityScripts\Extension Methods for Unity\CompressionExtensions.cs" />
@@ -850,13 +816,11 @@
     <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\Scripts\Note.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\Packs\Prototyping\Shaders\WorldCoordDiffuse.shader" />
-    <None Include="Assets\Libraries\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\Libraries\GUI Animator\GUI Animator for Unity UI\!How to.txt" />
     <None Include="Assets\Libraries\LeanTween\ReadMe.txt" />
     <None Include="Assets\Code\Shaders\ScreenSpaceGradient.shader" />
     <None Include="Assets\Docs\Structure.txt" />
     <None Include="Assets\Libraries\uGUI Message Box Modal Dialog\readme.txt" />
-    <None Include="Assets\Art\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Libraries\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Code\Shaders\TransFadeShader.shader" />
     <None Include="Assets\Libraries\Demigiant\DemiLib\Core\DemiLib.xml" />
@@ -1064,9 +1028,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Animancer.Lite">
-      <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Animancer/Animancer.Lite.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
       <HintPath>C:/Users/Zainab/Documents/Template/Assets/Libraries/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
