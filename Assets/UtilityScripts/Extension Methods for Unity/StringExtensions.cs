@@ -4,16 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-/* *****************************************************************************
- * File:    StringExtensions.cs
- * Author:  Philip Pierce - Tuesday, September 09, 2014
- * Description:
- *  Extensions for strings
- *  
- * History:
- *  Tuesday, September 09, 2014 - Created
- * ****************************************************************************/
-
 /// <summary>
 /// Extensions for strings
 /// </summary>
@@ -948,22 +938,48 @@ public static class StringExtensions
         return textInfo.ToTitleCase(mText);
     }
 
-    // ToTitleCase
-    #endregion
+	// ToTitleCase
+	#endregion
 
-    /// <summary>
-    /// Finds the specified Start Text and the End Text in this string instance, and returns a string
-    /// containing all the text starting from startText, to the beginning of endText. (endText is not
-    /// included.)
-    /// usage: "This is a tester for my cool extension method!!".Subsetstring("tester", "cool",true);
-    /// Output: "tester for my "
-    /// </summary>
-    /// <param name="s">The string to retrieve the subset from.</param>
-    /// <param name="startText">The Start Text to begin the Subset from.</param>
-    /// <param name="endText">The End Text to where the Subset goes to.</param>
-    /// <param name="ignoreCase">Whether or not to ignore case when comparing startText/endText to the string.</param>
-    /// <returns>A string containing all the text starting from startText, to the begining of endText.</returns>
-    public static string SubsetString(this string s, string startText, string endText, bool ignoreCase)
+	/// <summary>
+	/// Insert the specified character into the string every n characters
+	/// </summary>
+	/// <param name="input"></param>
+	/// <param name="insertCharacter"></param>
+	/// <param name="n"></param>
+	/// <param name="charsInserted"></param>
+	/// <returns></returns>
+	public static string InsertCharEveryNChars(this string input, char insertCharacter, int n, out int charsInserted)
+	{
+		charsInserted = 0;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < input.Length; i++)
+		{
+			if (i % n == 0)
+			{
+				sb.Append(insertCharacter);
+				++charsInserted;
+			}
+			if (input[i] == insertCharacter)
+				++charsInserted;
+			sb.Append(input[i]);
+		}
+		return sb.ToString();
+	}
+
+	/// <summary>
+	/// Finds the specified Start Text and the End Text in this string instance, and returns a string
+	/// containing all the text starting from startText, to the beginning of endText. (endText is not
+	/// included.)
+	/// usage: "This is a tester for my cool extension method!!".Subsetstring("tester", "cool",true);
+	/// Output: "tester for my "
+	/// </summary>
+	/// <param name="s">The string to retrieve the subset from.</param>
+	/// <param name="startText">The Start Text to begin the Subset from.</param>
+	/// <param name="endText">The End Text to where the Subset goes to.</param>
+	/// <param name="ignoreCase">Whether or not to ignore case when comparing startText/endText to the string.</param>
+	/// <returns>A string containing all the text starting from startText, to the begining of endText.</returns>
+	public static string SubsetString(this string s, string startText, string endText, bool ignoreCase)
     {
         if (s.IsNullOrEmpty())
             return string.Empty;

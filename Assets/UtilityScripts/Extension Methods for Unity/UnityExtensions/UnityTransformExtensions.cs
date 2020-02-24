@@ -27,20 +27,8 @@ public static class UnityTransformExtensions
     /// <param name="newX"></param>
     public static void SetPositionX(this Transform t, float newX)
     {
-        t.position = t.position.SetPositionX(newX);
+       t.position = t.position.SetX(newX);
     }
-
-    /// <summary>
-    /// Sets the X position value
-    /// </summary>
-    /// <param name="v3"></param>
-    /// <param name="newX"></param>
-    public static Vector3 SetPositionX(this Vector3 v3, float newX)
-    {
-        return new Vector3(newX, v3.y, v3.z);
-    }
-
-    // SetPositionX
     #endregion
 
     #region SetPositionY
@@ -52,20 +40,8 @@ public static class UnityTransformExtensions
     /// <param name="newY"></param>
     public static void SetPositionY(this Transform t, float newY)
     {
-        t.position = t.position.SetPositionY(newY);
+        t.position = t.position.SetY(newY);
     }
-
-    /// <summary>
-    /// Sets the Y position value
-    /// </summary>
-    /// <param name="v3"></param>
-    /// <param name="newY"></param>
-    public static Vector3 SetPositionY(this Vector3 v3, float newY)
-    {
-        return new Vector3(v3.x, newY, v3.z);
-    }
-
-    // SetPositionY
     #endregion
 
     #region SetPositionZ
@@ -77,20 +53,8 @@ public static class UnityTransformExtensions
     /// <param name="newZ"></param>
     public static void SetPositionZ(this Transform t, float newZ)
     {
-        t.position = t.position.SetPositionZ(newZ);
+        t.position = t.position.SetZ(newZ);
     }
-
-    /// <summary>
-    /// Sets the Z position value
-    /// </summary>
-    /// <param name="v3"></param>
-    /// <param name="newZ"></param>
-    public static Vector3 SetPositionZ(this Vector3 v3, float newZ)
-    {
-        return new Vector3(v3.x, v3.y, newZ);
-    }
-
-    // SetPositionZ
     #endregion
 
     #region GetPositionX
@@ -104,8 +68,6 @@ public static class UnityTransformExtensions
     {
         return t.position.x;
     }
-
-    // GetPositionX
     #endregion
 
     #region GetPositionY
@@ -119,8 +81,6 @@ public static class UnityTransformExtensions
     {
         return t.position.y;
     }
-
-    // GetPositionY
     #endregion
 
     #region GetPositionZ
@@ -134,7 +94,5 @@ public static class UnityTransformExtensions
     {
         return t.position.z;
     }
-
-    // GetPositionZ
     #endregion
 }
